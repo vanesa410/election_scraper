@@ -57,7 +57,7 @@ def parse_municipalities(html: bs) -> tuple[list[str], list[str]]:
     return municipality_ids, municipality_names, municipality_hrefs
 
 
-def parse_results(html: bs) -> tuple[list[str], list[str], list[str], dict[str, str]]:
+def parse_results(html: bs) -> tuple[list[str], list[str], list[str], dict[str, str], list[str]:
     """
     Parses election results for a municipality from html.
 
@@ -65,11 +65,12 @@ def parse_results(html: bs) -> tuple[list[str], list[str], list[str], dict[str, 
         html (BeautifulSoup): Parsed HTML of a municipality page.
 
     Returns:
-        Tuple[List[str], List[str], List[str], Dict[str, str]]:
+        Tuple[List[str], List[str], List[str], Dict[str, str], List[str]:
             - registered voters
             - envelopes
             - valid votes
             - dict {party: votes}
+            - region_name
     """
     td_registered_voters = html.find_all("td", {"headers": "sa2"})
     td_envelopes = html.find_all("td", {"headers": "sa3"})
