@@ -4,7 +4,7 @@
 
 This Python script downloads the results of the 2017 Czech Chamber of Deputies elections for individual municipalities in a given region and saves them into a CSV file. https://www.volby.cz/pls/ps2017nss/ps3?xjazyk=CZ 
 
-## Installation ofrequired libraries
+## Installation of required libraries
 
 Install the required libraries from `requirements.txt`:
 
